@@ -85,7 +85,13 @@ export default function TennisApp() {
                   .map((j, i) => (
                     <Card key={i}>
                       <CardContent className="p-2 flex justify-between">
-                      <span>{j["Posición"]}. {j.Jugador}</span>
+                      <span>
+  {j["Posición"] === "1" && "🥇 "}
+  {j["Posición"] === "2" && "🥈 "}
+  {j["Posición"] === "3" && "🥉 "}
+  {j["Posición"]}. {j.Jugador}
+</span>
+
                         <span>{j["Partidos Jugados"]} PJ</span>
                       </CardContent>
                     </Card>
