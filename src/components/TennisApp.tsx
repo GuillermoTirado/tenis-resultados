@@ -8,6 +8,13 @@ type RankingItem = {
     Puntos: string
   };
   
+  type GrupoItem = {
+    Grupo: string
+    Jugador: string
+    Posición: string
+    "Partidos Jugados": string
+  };
+  
 export default function TennisApp() {
     const [ranking, setRanking] = useState<RankingItem[]>([]);
   const [grupos, setGrupos] = useState([]);
