@@ -57,10 +57,11 @@ const [resultados, setResultados] = useState<ResultadoItem[]>([]);
 
       <Tabs defaultValue="ranking" className="w-full">
       <TabsList className="grid w-full grid-cols-3">
-  <TabsTrigger value="ranking" className="tab-trigger">Ranking</TabsTrigger>
+  <TabsTrigger value="ranking" className="tab-trigger">Resultado General</TabsTrigger>
   <TabsTrigger value="grupos" className="tab-trigger">Grupos</TabsTrigger>
-  <TabsTrigger value="resultados" className="tab-trigger">Resultados</TabsTrigger>
+  <TabsTrigger value="resultados" className="tab-trigger">Partidos</TabsTrigger>
 </TabsList>
+
 
 
         <TabsContent value="ranking">
