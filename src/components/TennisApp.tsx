@@ -62,17 +62,23 @@ export default function TennisApp() {
 
         {/* TAB POSICIONES */}
         <TabsContent value="ranking">
-          <div className="grid gap-2">
-            {ranking.map((j, i) => (
-              <Card key={i}>
-                <CardContent className="p-2 flex justify-between">
-                  <span>{j.Lugar}. {j.Jugador}</span>
-                  <span>{j["Puntos Reales"]} pts</span>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </TabsContent>
+  <div className="grid gap-2">
+    {ranking.map((j, i) => (
+      <Card key={i}>
+        <CardContent className="p-2 flex justify-between">
+          <span>
+            {j["Posición"] === "1" && "🥇 "}
+            {j["Posición"] === "2" && "🥈 "}
+            {j["Posición"] === "3" && "🥉 "}
+            {j["Posición"]}. {j.Jugador}
+          </span>
+          <span>{j["Puntos Reales"]} pts</span>
+        </CardContent>
+      </Card>
+    ))}
+  </div>
+</TabsContent>
+
 
         {/* TAB GRUPOS */}
         <TabsContent value="grupos">
