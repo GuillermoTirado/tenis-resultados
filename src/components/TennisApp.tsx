@@ -17,7 +17,7 @@ type RankingItem = {
   
 export default function TennisApp() {
     const [ranking, setRanking] = useState<RankingItem[]>([]);
-  const [grupos, setGrupos] = useState([]);
+    const [grupos, setGrupos] = useState<GrupoItem[]>([]);
   const [resultados, setResultados] = useState([]);
 
   useEffect(() => {
