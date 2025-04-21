@@ -7,18 +7,29 @@ type RankingItem = {
     Jugador: string
     Puntos: string
   };
-  
+
   type GrupoItem = {
     Grupo: string
     Jugador: string
     Posición: string
     "Partidos Jugados": string
   };
+
+  type ResultadoItem = {
+    "Jugador A": string;
+    "Jugador B": string;
+    "Set 1": string;
+    "Set 2": string;
+    "Set 3"?: string;
+    Ganador: string;
+  };
+  
   
 export default function TennisApp() {
     const [ranking, setRanking] = useState<RankingItem[]>([]);
     const [grupos, setGrupos] = useState<GrupoItem[]>([]);
-  const [resultados, setResultados] = useState([]);
+const [resultados, setResultados] = useState<ResultadoItem[]>([]);
+
 
   useEffect(() => {
     fetch(
