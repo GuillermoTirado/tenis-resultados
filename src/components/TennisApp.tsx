@@ -2,8 +2,14 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
+type RankingItem = {
+    Posición: string
+    Jugador: string
+    Puntos: string
+  };
+  
 export default function TennisApp() {
-  const [ranking, setRanking] = useState([]);
+    const [ranking, setRanking] = useState<RankingItem[]>([]);
   const [grupos, setGrupos] = useState([]);
   const [resultados, setResultados] = useState([]);
 
