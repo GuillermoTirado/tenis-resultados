@@ -79,37 +79,18 @@ const [resultados, setResultados] = useState<ResultadoItem[]>([]);
 
 
 <TabsContent value="ranking">
-  <div className="overflow-x-auto">
-    <table className="w-full text-sm text-left border border-border rounded-sm">
-      <thead>
-        <tr className="bg-muted">
-          <th className="p-2">Lugar</th>
-          <th className="p-2">Jugador</th>
-          <th className="p-2">PJ</th>
-          <th className="p-2">PG</th>
-          <th className="p-2">JG</th>
-          <th className="p-2">JP</th>
-          <th className="p-2">DIF</th>
-          <th className="p-2">Puntos Reales</th>
-        </tr>
-      </thead>
-      <tbody>
-        {ranking.map((j, i) => (
-          <tr key={i} className="border-t border-border">
-            <td className="p-2">{j.Lugar}</td>
-            <td className="p-2">{j.Jugador}</td>
-            <td className="p-2">{j.PJ}</td>
-            <td className="p-2">{j.PG}</td>
-            <td className="p-2">{j.JG}</td>
-            <td className="p-2">{j.JP}</td>
-            <td className="p-2">{j.DIF}</td>
-            <td className="p-2 font-semibold">{j["Puntos Reales"]}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+  <div className="grid gap-2">
+    {ranking.map((j, i) => (
+      <Card key={i}>
+        <CardContent className="p-2 flex justify-between">
+          <span>{j.Lugar}. {j.Jugador}</span>
+          <span>{j["Puntos Reales"]} pts</span>
+        </CardContent>
+      </Card>
+    ))}
   </div>
 </TabsContent>
+
 
 
         <TabsContent value="grupos">
