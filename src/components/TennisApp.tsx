@@ -18,6 +18,8 @@ type RankingItem = {
     DIF: string;
     "Puntos Reales": string;
   };
+  const [ranking, setRanking] = useState<RankingItem[]>([]);
+  
   
 
   type GrupoItem = {
