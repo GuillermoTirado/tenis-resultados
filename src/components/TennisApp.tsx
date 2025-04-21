@@ -8,6 +8,18 @@ type RankingItem = {
     Puntos: string
   };
 
+  type RankingItem = {
+    Lugar: string;
+    Jugador: string;
+    PJ: string;
+    PG: string;
+    JG: string;
+    JP: string;
+    DIF: string;
+    "Puntos Reales": string;
+  };
+  
+
   type GrupoItem = {
     Grupo: string
     Jugador: string
@@ -64,41 +76,39 @@ const [resultados, setResultados] = useState<ResultadoItem[]>([]);
 
 
 
-        <TabsContent value="ranking">
-          <div className="grid gap-2">
-          <div className="overflow-x-auto">
-  <table className="w-full text-sm text-left border border-border rounded-sm">
-    <thead>
-      <tr className="bg-muted">
-        <th className="p-2">Lugar</th>
-        <th className="p-2">Jugador</th>
-        <th className="p-2">PJ</th>
-        <th className="p-2">PG</th>
-        <th className="p-2">JG</th>
-        <th className="p-2">JP</th>
-        <th className="p-2">DIF</th>
-        <th className="p-2">Puntos Reales</th>
-      </tr>
-    </thead>
-    <tbody>
-      {ranking.map((j, i) => (
-        <tr key={i} className="border-t border-border">
-          <td className="p-2">{j.Lugar}</td>
-          <td className="p-2">{j.Jugador}</td>
-          <td className="p-2">{j.PJ}</td>
-          <td className="p-2">{j.PG}</td>
-          <td className="p-2">{j.JG}</td>
-          <td className="p-2">{j.JP}</td>
-          <td className="p-2">{j.DIF}</td>
-          <td className="p-2 font-semibold">{j["PUNTOS REALES"]}</td>
+<TabsContent value="ranking">
+  <div className="overflow-x-auto">
+    <table className="w-full text-sm text-left border border-border rounded-sm">
+      <thead>
+        <tr className="bg-muted">
+          <th className="p-2">Lugar</th>
+          <th className="p-2">Jugador</th>
+          <th className="p-2">PJ</th>
+          <th className="p-2">PG</th>
+          <th className="p-2">JG</th>
+          <th className="p-2">JP</th>
+          <th className="p-2">DIF</th>
+          <th className="p-2">Puntos Reales</th>
         </tr>
-      ))}
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        {ranking.map((j, i) => (
+          <tr key={i} className="border-t border-border">
+            <td className="p-2">{j.Lugar}</td>
+            <td className="p-2">{j.Jugador}</td>
+            <td className="p-2">{j.PJ}</td>
+            <td className="p-2">{j.PG}</td>
+            <td className="p-2">{j.JG}</td>
+            <td className="p-2">{j.JP}</td>
+            <td className="p-2">{j.DIF}</td>
+            <td className="p-2 font-semibold">{j["Puntos Reales"]}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</TabsContent>
 
-          </div>
-        </TabsContent>
 
         <TabsContent value="grupos">
           <div className="grid gap-4">
