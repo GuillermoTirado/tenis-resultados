@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/tabs";
 
 type RankingItem = {
-  Lugar: string;
+  Posición: string;
   Jugador: string;
   "Puntos Reales": string;
 };
@@ -43,9 +43,11 @@ export default function TennisApp() {
     fetch("https://opensheet.elk.sh/1rH8506fhedqg61aMSKaEVbth3IjHm-_rYGKywjDvBsg/Ranking")
       .then((res) => res.json())
       .then(setRanking);
+
     fetch("https://opensheet.elk.sh/1rH8506fhedqg61aMSKaEVbth3IjHm-_rYGKywjDvBsg/Grupos")
       .then((res) => res.json())
       .then(setGrupos);
+
     fetch("https://opensheet.elk.sh/1rH8506fhedqg61aMSKaEVbth3IjHm-_rYGKywjDvBsg/Resultados")
       .then((res) => res.json())
       .then(setResultados);
@@ -62,23 +64,22 @@ export default function TennisApp() {
 
         {/* TAB POSICIONES */}
         <TabsContent value="ranking">
-  <div className="grid gap-2">
-    {ranking.map((j, i) => (
-      <Card key={i}>
-        <CardContent className="p-2 flex justify-between">
-          <span>
-            {j["Posición"] === "1" && "🥇 "}
-            {j["Posición"] === "2" && "🥈 "}
-            {j["Posición"] === "3" && "🥉 "}
-            {j["Posición"]}. {j.Jugador}
-          </span>
-          <span>{j["Puntos Reales"]} pts</span>
-        </CardContent>
-      </Card>
-    ))}
-  </div>
-</TabsContent>
-
+          <div className="grid gap-2">
+            {ranking.map((j, i) => (
+              <Card key={i}>
+                <CardContent className="p-2 flex justify-between">
+                  <span>
+                    {j["Posición"] === "1" && "🥇 "}
+                    {j["Posición"] === "2" && "🥈 "}
+                    {j["Posición"] === "3" && "🥉 "}
+                    {j["Posición"]}. {j.Jugador}
+                  </span>
+                  <span>{j["Puntos Reales"]} pts</span>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </TabsContent>
 
         {/* TAB GRUPOS */}
         <TabsContent value="grupos">
@@ -91,13 +92,7 @@ export default function TennisApp() {
                   .map((j, i) => (
                     <Card key={i}>
                       <CardContent className="p-2 flex justify-between">
-                      <span>
-  {j["Posición"] === "1" && "🥇 "}
-  {j["Posición"] === "2" && "🥈 "}
-  {j["Posición"] === "3" && "🥉 "}
-  {j["Posición"]}. {j.Jugador}
-</span>
-
+                        <span>{j.Posición}. {j.Jugador}</span>
                         <span>{j["Partidos Jugados"]} PJ</span>
                       </CardContent>
                     </Card>
